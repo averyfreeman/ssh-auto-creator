@@ -10,10 +10,10 @@ _How does it work?_
 
 Follow the prompts in this simple script when it asks:
 
-*What would you like to name the connection?
-*What kind of key would you like to generate?
-*With which host will you be using your new key?
-*Does the host require a special port?
+- What would you like to name the connection?
+- What kind of key would you like to generate?
+- With which host will you be using your new key?
+- Does the host require a special port?
 
 After generating the key, it'll automatically copy the public key to the specified host's `authorized_hosts` file.
 
