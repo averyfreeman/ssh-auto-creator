@@ -30,8 +30,9 @@ Host $alias
 EOT
 printf "\nYour config file has been appended with your settings,\n"
 printf "Now you can type 'ssh $alias' to initiate an ssh connection\n"
-printf "Will attempt to copy your ssh key to $hostname:\n"
-printf "You can check the authorized_keys file on the host\n If the copy fails, or is not possible for other reasons, copy the key manually based on the host's requirements\n"
+printf "\nWill attempt to copy your ssh key to $hostname on exit\n"
+printf "\nYou can check the authorized_keys file on the host\n"
+printf "\nIf the copy fails, or is not possible for other reasons, copy the key manually based on the host's requirements (e.g. web interface, etc.)\n\n"
 printf "Note: The key is named ~/.ssh/$alias on this machine"
 printf "\n\nAll done!\n\n"
 ssh-copy-id -i ~/.ssh/$alias -p $port $username@$hostname >/dev/null 2>&1

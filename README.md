@@ -15,7 +15,9 @@ Follow the prompts in this simple script when it asks:
 - With which host will you be using your new key?
 - Does the host require a special port?
 
-After generating the key, it'll automatically copy the public key to the specified host's `authorized_hosts` file.
+After generating the key, it'll automatically add the keyfile and connection parameters to your ssh config, and copy the public key to the specified host's `authorized_keys` file (if possible).
+
+This allows you to connect to the host by simply typing `ssh connectionAlias`
 
 Example output:
 
@@ -76,9 +78,12 @@ Appending your ssh config file:
 
 Your config file has been appended with your settings,
 Now you can type 'ssh pg' to initiate an ssh connection
+
 Will attempt to copy your ssh key to pengui:
 You can check the authorized_keys file on the host
- If the copy fails, or is not possible for other reasons, copy the key manually based on the host's requirements
+
+ If the copy fails, or is not possible for other reasons, copy the key manually based on the host's requirements  (e.g. web interface, etc.)
+
 Note: The key is named ~/.ssh/pg on this machine
 
 All done!
@@ -86,7 +91,7 @@ All done!
 avery@pengui's password:
 ```
 
-_Then you can log in using the simple command ssh <alias>_
+Then you can log in using the simple command ssh _alias_
 
 ```
 $ ssh pg
